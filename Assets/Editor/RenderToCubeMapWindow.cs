@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Editor
 {
+    /// <summary>
+    /// 编辑器拓展 生成立方体纹理
+    /// </summary>
     public sealed class RenderToCubeMapWindow : EditorWindow
     {
         private GameObject m_Obj;
