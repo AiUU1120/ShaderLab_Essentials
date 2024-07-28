@@ -15,7 +15,7 @@ namespace Editor
         [MenuItem("立方体纹理动态生成/打开生成窗口")]
         static void OpenWindow()
         {
-            var window = EditorWindow.GetWindow<RenderToCubeMapWindow>("立方体纹理生成窗口");
+            var window = GetWindow<RenderToCubeMapWindow>("立方体纹理生成窗口");
             window.Show();
         }
 
@@ -33,10 +33,15 @@ namespace Editor
                     return;
                 }
                 // 动态生成立方体纹理
-                var tmpObj = new GameObject("临时对象");
-                tmpObj.transform.position = m_Obj.transform.position;
+                var tmpObj = new GameObject("临时对象")
+                {
+                    transform =
+                    {
+                        position = m_Obj.transform.position
+                    }
+                };
                 var camera = tmpObj.AddComponent<Camera>();
-                // 关键方法 可以马上生成6张2D纹理贴图
+                // 关键方法 马上生成6张2D纹理贴图
                 camera.RenderToCubemap(m_Cubemap);
                 DestroyImmediate(tmpObj);
             }
