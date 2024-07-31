@@ -1,2 +1,2 @@
 # ShaderLab_Essentials
-以《Shader入门精要》为主的Unity ShaderLab项目，包含了各种基础的实现。
+基于《Shader入门精要》的Unity ShaderLab项目，包含各种基础效果的实现。
